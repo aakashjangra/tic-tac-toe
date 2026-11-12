@@ -42,7 +42,10 @@ function App() {
     if (result) {
       setWinner(result.player);
       setWinningCells(result.cells);
-      setScores((prev) => ({ ...prev, [result.player]: prev[result.player] + 1 }));
+      setScores((prev) => ({
+        ...prev,
+        [result.player]: prev[result.player] + 1,
+      }));
       return;
     }
 
@@ -78,16 +81,13 @@ function App() {
 
       <div className="scores">
         <div className="score-card">
-          <p className="score-label">X</p>
-          <p className="score-value">{scores.X}</p>
+          <p className="score-text">{`X: ${scores.X}`}</p>
         </div>
         <div className="score-card">
-          <p className="score-label">Draws</p>
-          <p className="score-value">{scores.draws}</p>
+          <p className="score-text">{`Draws: ${scores.draws}`}</p>
         </div>
         <div className="score-card">
-          <p className="score-label">O</p>
-          <p className="score-value">{scores.O}</p>
+          <p className="score-text">{`O: ${scores.O}`}</p>
         </div>
       </div>
 
